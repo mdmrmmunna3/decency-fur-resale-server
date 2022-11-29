@@ -21,6 +21,7 @@ async function run() {
     try {
         const categoriesCollection = client.db('decencyFurReSale').collection('categories');
         const productsCollection = client.db('decencyFurReSale').collection('products');
+        const bookCollection = client.db('decencyFurReSale').collection('orders');
 
         // get categories form database
         app.get('/categories', async (req, res) => {
@@ -30,17 +31,42 @@ async function run() {
             res.send(categories)
         });
 
+        // add product 
         app.post('/products', async(req, res) => {
             const addProduct = req.body ;
             const result = await productsCollection.insertOne(addProduct);
             res.send(result);
         })
 
+        // get product 
         app.get('/products', async (req, res) => {
             const query = {};
             const products = await productsCollection.find(query).toArray();
             res.send(products);
+        });
+
+        // get product by id 
+        app.get('/products/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = {_id: ObjectId(id)};
+            const product = await productsCollection.findOne(query)
+            res.send(product);
         })
+
+
+        // add book order 
+        app.post('/bookingOrders', async(req, res) => {
+            const bookedProduct = req.body ;
+            const result = await bookCollection.insertOne(bookedProduct);
+            res.send(result);
+        })
+
+        // get booking order 
+        // app.get('/bookingOrders', async (req, res) => {
+        //     const query = {};
+        //     const products = await bookCollection.find(query).toArray();
+        //     res.send(products);
+        // })
 
 
         
