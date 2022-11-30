@@ -32,8 +32,8 @@ async function run() {
         });
 
         // add product 
-        app.post('/products', async(req, res) => {
-            const addProduct = req.body ;
+        app.post('/products', async (req, res) => {
+            const addProduct = req.body;
             const result = await productsCollection.insertOne(addProduct);
             res.send(result);
         })
@@ -48,28 +48,37 @@ async function run() {
         // get product by id 
         app.get('/products/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id: ObjectId(id)};
+            const query = { _id: ObjectId(id) };
             const product = await productsCollection.findOne(query)
             res.send(product);
         })
 
 
         // add book order 
-        app.post('/bookingOrders', async(req, res) => {
-            const bookedProduct = req.body ;
+        app.post('/bookingOrders', async (req, res) => {
+            const bookedProduct = req.body;
             const result = await bookCollection.insertOne(bookedProduct);
             res.send(result);
         })
 
         // get booking order 
-        // app.get('/bookingOrders', async (req, res) => {
-        //     const query = {};
-        //     const products = await bookCollection.find(query).toArray();
-        //     res.send(products);
+        app.get('/bookingOrders', async (req, res) => {
+            const query = {};
+            const products = await bookCollection.find(query).toArray();
+            res.send(products);
+        })
+
+
+        // app.get('/bookingOrders/:id', async(req, res) => {
+        //     const id = req.params.id;
+        //     const query = { _id: ObjectId(id) };
+        //     const product = await bookCollection.findOne(query)
+        //     res.send(product);
+
         // })
 
 
-        
+
 
     }
 
