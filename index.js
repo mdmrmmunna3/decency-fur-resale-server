@@ -29,7 +29,7 @@ async function run() {
         // const verifyAdmin = async (req, res, next) => {
         //     const decodedEmail = req.decoded.email
         //     const query = { email: decodedEmail }
-        //     const user = await usersCollection.findOne(query);
+        //     const user = await allUsersCollection.findOne(query);
         //     if (user?.role !== 'admin') {
         //         return res.status(403).send({ message: 'forbidden access' });
         //     }
@@ -82,12 +82,42 @@ async function run() {
         })
 
 
+        // alluser part
         // saved user data with email and paswword
         app.post('/allusers', async (req, res) => {
             const user = req.body;
             const result = await allUsersCollection.insertOne(user);
             res.send(result);
         })
+
+        app.get('/allusers', async (req, res) => {
+            const query = {};
+            const users = await allUsersCollection.find(query).toArray();
+            res.send(users);
+        })
+
+        app.get('/allusers/userInfo', async (req, res) => {
+            const email = req.query.email;
+            console.log(email)
+            const query = { email: email };
+            const user = await allUsersCollection.findOne(query);
+            // const result = await user.toArray()
+            res.send(user);
+            console.log(user);
+        })
+
+        app.put('/allusers/admin/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const options = { upsert: true };
+            const updateDoc = {
+                $set: {
+                    role: 'admin'
+                },
+            };
+            const result = await allUsersCollection.updateOne(filter, updateDoc, options);
+            res.send(result);
+        });
 
     }
 
