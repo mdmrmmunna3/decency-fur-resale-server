@@ -22,6 +22,19 @@ async function run() {
         const categoriesCollection = client.db('decencyFurReSale').collection('categories');
         const productsCollection = client.db('decencyFurReSale').collection('products');
         const bookCollection = client.db('decencyFurReSale').collection('orders');
+        const allUsersCollection = client.db('decencyFurReSale').collection('allusers')
+
+
+        // veryfy admin 
+        // const verifyAdmin = async (req, res, next) => {
+        //     const decodedEmail = req.decoded.email
+        //     const query = { email: decodedEmail }
+        //     const user = await usersCollection.findOne(query);
+        //     if (user?.role !== 'admin') {
+        //         return res.status(403).send({ message: 'forbidden access' });
+        //     }
+        //     next();
+        // }
 
         // get categories form database
         app.get('/categories', async (req, res) => {
@@ -69,16 +82,12 @@ async function run() {
         })
 
 
-        // app.get('/bookingOrders/:id', async(req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) };
-        //     const product = await bookCollection.findOne(query)
-        //     res.send(product);
-
-        // })
-
-
-
+        // saved user data with email and paswword
+        app.post('/allusers', async (req, res) => {
+            const user = req.body;
+            const result = await allUsersCollection.insertOne(user);
+            res.send(result);
+        })
 
     }
 
