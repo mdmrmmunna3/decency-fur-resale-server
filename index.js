@@ -98,10 +98,8 @@ async function run() {
 
         app.get('/allusers/userInfo', async (req, res) => {
             const email = req.query.email;
-            console.log(email)
             const query = { email: email };
             const user = await allUsersCollection.findOne(query);
-            // const result = await user.toArray()
             res.send(user);
             
         })
