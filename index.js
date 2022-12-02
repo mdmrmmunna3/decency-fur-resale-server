@@ -103,7 +103,7 @@ async function run() {
             const user = await allUsersCollection.findOne(query);
             // const result = await user.toArray()
             res.send(user);
-            console.log(user);
+            
         })
 
         app.put('/allusers/admin/:id', async (req, res) => {
@@ -118,6 +118,13 @@ async function run() {
             const result = await allUsersCollection.updateOne(filter, updateDoc, options);
             res.send(result);
         });
+
+        app.delete('/allusers/:id' , async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await allUsersCollection.deleteOne(query);
+            res.send(result);
+        })
 
     }
 

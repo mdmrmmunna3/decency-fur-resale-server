@@ -1,0 +1,154 @@
+[
+    {
+        "product_id": "1",
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "total_view": 488,
+        "brand": "Toyota",
+        "location": "Dhaka",
+        "seller": "rahul",
+        "name": "Toyota Avalon",
+        "orginal_price": 43000,
+        "resale_price": 36000,
+        "post_date": "May 17, 2021",
+        "year_of_use": " 1.5 years",
+        "year_of_purchase": "Nov 17, 2021",
+        "image_url": "https://toyotaassets.scene7.com/is/image/toyota/CRW_MY23_0004_V003-2?fmt=jpg&fit=crop&resMode=bisharp&qlt=80&wid=848&hei=476",
+        "description": "Toyota Crown Platinum's Hybrid MAX powertrain delivers up to 340 horsepower with 400 lb.-ft. of torque. And XLE and Limited's remarkably efficient hybrid engine has an EPA-estimated 41 mpg combined rating."
+    },
+    {
+        "product_id": "1",
+        "rating": {
+            "number": 4.6,
+            "badge": "Excellent"
+        },
+        "total_view": 458,
+        "brand": "Toyota",
+        "location": "Khulna",
+        "seller": "sobuj",
+        "name": "Toyota Sienna",
+        "orginal_price": 45000,
+        "resale_price": 37000,
+        "post_date": "April 17, 2019",
+        "year_of_use": " 2 years",
+        "year_of_purchase": "Nov 19, 2020",
+        "image_url": "https://i.ytimg.com/vi/RP1sbWdWDfQ/maxresdefault.jpg",
+        "description": "Even if it's not your cup of tea, you can't deny that the new Toyota Sienna's interior design is a stunning departure from the minivan norm. That it's found in the Sienna, forever a conservative entry in the most conservative of segments, "
+    },
+    {
+        "product_id": "2",
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "total_view": 488,
+        "brand": "BMW",
+        "location": "Bagerhat",
+        "seller": "miraj",
+        "name": "BMW 3-Series",
+        "orginal_price": 6000,
+        "resale_price": 5000,
+        "post_date": "Nov 17, 2019",
+        "year_of_use": " 2.5 years",
+        "year_of_purchase": "April 17, 2021",
+        "image_url": "https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/X3/8712/1664016641788/front-left-side-47.jpg?tr=w-150",
+        "description": "This new BMW 3.0 CSL shares nothing but its name with the 1970s classic, ... but for all BMW production vehicles produced up to that point."
+    },
+    {
+        "product_id": "3",
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "total_view": 488,
+        "brand": "Tesla",
+        "location": "Dhaka",
+        "seller": "rahul",
+        "name": "Tesla Model S",
+        "orginal_price": 28000,
+        "resale_price": 25000,
+        "post_date": "Nov 17, 2019",
+        "year_of_use": " 1.5 years",
+        "year_of_purchase": "Nov 25, 2021",
+        "image_url": "https://tesla-cdn.thron.com/delivery/public/image/tesla/c0c475f7-2856-46e1-87ab-dd67ec8dd43f/bvlatuR/std/2880x1800/MS-Interior-Hero-Desktop",
+        "description": "Model S Plaid has the quickest acceleration of any vehicle in production. Updated battery architecture for all Model S trims enables back-to-back track runs without performance degradation."
+    },
+    {
+        "product_id": "2",
+        "rating": {
+            "number": 4.8,
+            "badge": "Excellent"
+        },
+        "total_view": 408,
+        "brand": "BMW",
+        "location": "Shatkira",
+        "seller": "miraj",
+        "name": "BMW X1",
+        "orginal_price": 43200,
+        "resale_price": 34000,
+        "post_date": "April 17, 2019",
+        "year_of_use": " 2 years",
+        "year_of_purchase": "Nov 20, 2020",
+        "image_url": "https://toyotaassets.scene7.com/is/image/toyota/CRW_MY23_0004_V003-2?fmt=jpg&fit=crop&resMode=bisharp&qlt=80&wid=848&hei=476",
+        "description": "Be it flexibility, complete peace of mind or the ability to drive a new BMW more often, the BMW 360˚ Finance Plan caters to all your needs. This plan makes owning a BMW an absolute JOY with a host of additional privileges like:"
+    },
+    {
+        "product_id": "3",
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "total_view": 488,
+        "brand": "Tesla",
+        "location": "Dhaka",
+        "seller": "manik",
+        "name": "Tesla Model X",
+        "orginal_price": 43000,
+        "resale_price": 36000,
+        "post_date": "Nov 17, 2019",
+        "year_of_use": " 1.5 years",
+        "year_of_purchase": "Nov 16, 2020",
+        "image_url": "https://tesla-cdn.thron.com/delivery/public/image/tesla/10accb74-6710-4826-ba35-926846c140b5/bvlatuR/std/4096x2560/Model-X-Performance-Hero-Desktop-LHD",
+        "description": "With the most power and quickest acceleration of any SUV, Model X Plaid is the highest performing SUV ever built. Updated battery architecture enables both Long Range and Plaid configurations"
+    },
+    {
+        "product_id": "4",
+        "rating": {
+            "number": 4.5,
+            "badge": "Excellent"
+        },
+        "total_view": 488,
+        "brand": "Rolls-Royce",
+        "location": "Dhaka",
+        "seller": "rahul",
+        "name": " Rolls-Royce Ghost",
+        "orginal_price": 43000,
+        "resale_price": 36000,
+        "post_date": "Nov 17, 2020",
+        "year_of_use": " 1.5 years",
+        "year_of_purchase": "Nov 17, 2021",
+        "image_url": "https://media.ed.edmunds-media.com/rolls-royce/ghost/2021/oem/2021_rolls-royce_ghost_sedan_base_fq_oem_1_600.jpg",
+        "description": "Reframe your perspective of the path ahead with the Illuminated Grille’s evocative light. Guided through darkened cityscapes, set yourself free with every journey."
+    },
+    {
+        "product_id": "4",
+        "rating": {
+            "number": 4.6,
+            "badge": "Excellent"
+        },
+        "total_view": 508,
+        "brand": "Rolls-Royce",
+        "location": "Dhaka",
+        "seller": "manik",
+        "name": "Rolls-Royce-Phantom",
+        "orginal_price": 33000,
+        "resale_price": 26000,
+        "post_date": "April 17, 2021",
+        "year_of_use": " 1.5 years",
+        "year_of_purchase": "Nov 17, 2021",
+        "image_url": "https://images.hindustantimes.com/auto/img/2022/11/03/1600x900/rolls-royce-phantom-series-II_1667439771956_1667439772150_1667439772150.jpg",
+        "description": "The nineteen-year-old event has long been a place of prestige. Vehicles are displayed on the greens of the Quail Lodge & Golf Club, which will of course now include the new Phantom."
+    }
+]
