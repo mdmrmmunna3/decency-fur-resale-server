@@ -96,12 +96,19 @@ async function run() {
             res.send(users);
         })
 
+        app.get('/allusers/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const user = await allUsersCollection.findOne(query)
+            res.send(user);
+        })
+
         app.get('/allusers/userInfo', async (req, res) => {
             const email = req.query.email;
             const query = { email: email };
             const user = await allUsersCollection.findOne(query);
             res.send(user);
-            
+
         })
 
         app.put('/allusers/admin/:id', async (req, res) => {
@@ -117,12 +124,42 @@ async function run() {
             res.send(result);
         });
 
-        app.delete('/allusers/:id' , async (req, res) => {
+        // delete user api 
+        app.delete('/allusers/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const result = await allUsersCollection.deleteOne(query);
             res.send(result);
         })
+
+        // verified user api 
+        app.patch('/allusers/:id', async (req, res) => {
+            const id = req.params.id;
+            const { verified } = req.body;
+
+            if (typeof verified !== 'boolean') {
+                return res.status(400).json({ message: "Invalid 'verified' value. It should be a boolean." });
+            }
+
+            try {
+                const filter = { _id: ObjectId(id) };
+                const updateDoc = {
+                    $set: {
+                        verified: verified
+                    },
+                };
+                const result = await allUsersCollection.updateOne(filter, updateDoc);
+
+                if (result.modifiedCount === 1) {
+                    res.status(200).json({ message: "User verified status updated successfully." });
+                } else {
+                    res.status(404).json({ message: "User not found or no changes made." });
+                }
+            } catch (error) {
+                console.error("Error updating user verification status:", error);
+                res.status(500).json({ message: "Internal server error." });
+            }
+        });
 
     }
 
