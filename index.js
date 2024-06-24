@@ -91,25 +91,38 @@ async function run() {
         })
 
         app.get('/allusers', async (req, res) => {
-            const query = {};
+            let query = {};
             const users = await allUsersCollection.find(query).toArray();
             res.send(users);
         })
+
+        app.get('/allusers/role', async (req, res) => {
+            try {
+                const email = req.query.email;
+                if (!email) {
+                    return res.status(400).send({ message: "Email query parameter is required" });
+                }
+
+                const query = { email: email };
+                const user = await allUsersCollection.findOne(query);
+
+                if (!user) {
+                    return res.status(404).send({ message: "User not found" });
+                }
+
+                res.send(user);
+            } catch (error) {
+                console.error("Error fetching user by email:", error);
+                res.status(500).send({ message: "Internal Server Error" });
+            }
+        });
 
         app.get('/allusers/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const user = await allUsersCollection.findOne(query)
             res.send(user);
-        })
-
-        app.get('/allusers/userInfo', async (req, res) => {
-            const email = req.query.email;
-            const query = { email: email };
-            const user = await allUsersCollection.findOne(query);
-            res.send(user);
-
-        })
+        });
 
         app.put('/allusers/admin/:id', async (req, res) => {
             const id = req.params.id;
