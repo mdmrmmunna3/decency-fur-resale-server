@@ -66,6 +66,14 @@ async function run() {
             res.send(product);
         })
 
+        // seller delete there each product api
+        app.delete('/products/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await productsCollection.deleteOne(query);
+            res.send(result);
+        })
+
 
         // add book order 
         app.post('/bookingOrders', async (req, res) => {
